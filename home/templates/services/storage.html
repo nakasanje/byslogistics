@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="service-hero">
+    <div class="container">
+        <h1 class="service-title">Storage Solutions</h1>
+        <p class="service-subtitle">Safe, Accessible & Affordable Storage in Kampala</p>
+    </div>
+</section>
+
+<section class="service-content container">
+    <div class="service-intro">
+        <img src="{% static 'images/store.jpeg' %}" alt="Storage Services" class="service-image">
+        <div class="service-text">
+            <h2>Flexible Storage for Your Growing Needs</h2>
+            <p>Whether you're a small business, wholesaler, or individual in need of short or long-term storage, BYS Logistics Uganda offers clean, secure, and well-managed warehouse spaces in Kampala.</p>
+            <p>With 24/7 access, inventory support, and protection from weather or damage, our storage services help you focus on what matters — growing your business.</p>
+        </div>
+    </div>
+
+    <div class="service-benefits">
+        <h3>Why Use Our Storage?</h3>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Flexible Short & Long-Term Options</li>
+            <li><i class="fas fa-check-circle"></i> Daily Access & Security</li>
+            <li><i class="fas fa-check-circle"></i> Ideal for SMEs, Retailers & E-Commerce</li>
+            <li><i class="fas fa-check-circle"></i> Loading, Sorting & Dispatch Support</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <a href="{% url 'contact' %}" class="btn-primary">Book Storage Space</a>
+    </div>
+</section>
+{% endblock %}

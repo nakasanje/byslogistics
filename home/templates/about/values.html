@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="about-values-page">
+  <div class="container values-content">
+
+    <!-- Main Heading -->
+    <h1 class="section-title">OUR VALUES</h1>
+
+    <!-- Introduction Paragraph -->
+    <p class="intro-paragraph">
+      At Byomere Yusuf Swift (BYS) Distribution and Logistics, our values are the foundation of how we operate, interact with clients, and empower our team. We don’t just deliver — we deliver with purpose.
+    </p>
+
+    <!-- Founder Section -->
+    <div class="founder-card">
+      <img src="{% static 'images/3.jpg' %}" alt="Founder" class="founder-img" />
+      <p class="founder-subtext">BYS is named after our founder</p>
+      <h2 class="founder-name">Byomere Yusuf</h2>
+      <p class="founder-note">
+        The word <strong>“Swift”</strong> in our name symbolizes our commitment to speed, efficiency, and reliability in every delivery.
+      </p>
+    </div>
+
+    <!-- Mission and Vision -->
+    <div class="mv-section">
+      <div class="mv-item">
+        <h3>Our Mission</h3>
+        <p>To provide reliable, people-centered logistics solutions that move Uganda forward — one delivery at a time.</p>
+      </div>
+      <div class="mv-item">
+        <h3>Our Vision</h3>
+        <p>To become Uganda’s most trusted logistics partner through innovation, efficiency, and service excellence.</p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="core-principles">
+      <h3>What Drives Us</h3>
+      <ul>
+        <li>
+          <img src="{% static 'images/icons/integrity.jpeg' %}" alt="Integrity Icon">
+          <span>We uphold transparency and honesty in every delivery and decision.</span>
+        </li>
+        <li>
+          <img src="{% static 'images/icons/empathy.jpeg' %}" alt="Empathy Icon">
+          <span>We listen deeply and serve thoughtfully — always putting people first.</span>
+        </li>
+        <li>
+          <img src="{% static 'images/icons/accountability.jpeg' %}" alt="Accountability Icon">
+          <span>We own our actions and take full responsibility for the promises we make.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Testimonial or Highlighted Quote -->
+    <blockquote class="value-quote">
+      “At BYS, logistics is more than moving goods — it’s moving lives and possibilities.”
+    </blockquote>
+
+    <!-- Next Page Link -->
+    <a href="{% url 'about_technology' %}" class="next-link">Discover Our Technology &rarr;</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="service-hero">
+    <div class="container">
+        <h1 class="service-title">Home Delivery</h1>
+        <p class="service-subtitle">Reliable Same-Day & Scheduled Deliveries in Kampala & Beyond</p>
+    </div>
+</section>
+
+<section class="service-content container">
+    <div class="service-intro">
+        <img src="{% static 'images/about/background.jpeg' %}" alt="Home Delivery" class="service-image">
+        <div class="service-text">
+            <h2>All Roads Lead to Your Doorstep</h2>
+            <p>At BYS Logistics, we specialize in fast, secure, and affordable home deliveries across Kampala, Wakiso, Entebbe, Mukono, and surrounding areas.</p>
+            <p>Whether you’re an e-commerce business, a retail shop, or an individual sending a parcel — our trained riders and fleet make it happen efficiently.</p>
+        </div>
+    </div>
+
+    <div class="service-benefits">
+        <h3>Why Choose Our Home Delivery?</h3>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Same-Day & Scheduled Deliveries</li>
+            <li><i class="fas fa-check-circle"></i> Real-Time Tracking</li>
+            <li><i class="fas fa-check-circle"></i> Affordable Flat Rates</li>
+            <li><i class="fas fa-check-circle"></i> Trained & Verified Riders</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <a href="{% url 'contact' %}" class="btn-primary">Request a Pickup</a>
+         <a href="{% url 'storage_service' %}" class="next-link">Discover Our Storage Services &rarr;</a>
+  
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BYS Logistics Uganda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar">
+    <div class="nav-main-content container">
+        <div class="nav-left">
+            <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+
+        <div class="nav-center">
+            <a href="{% url 'home' %}" class="logo-text">
+                <span class="logo-bjs">BYS</span> <span class="logo-main">Distribution & Logistics</span>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://wa.me/256704705184" target="_blank" aria-label="WhatsApp chat">
+                <button class="chat-button"><i class="fab fa-whatsapp"></i></button>
+            </a>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Services ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'services_delivery' %}">Same-Day Delivery</a></li>
+                <li><a href="{% url 'storage_service' %}">Storage</a></li>
+                <li><a href="{%url 'business_support'%}">Retail & Business Support</a></li>
+                
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropbtn">About Us <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+            <ul class="dropdown-menu extended-about">
+                <li>
+                    <a href="{% url 'about_values' %}">
+                        <div class="dropdown-icon our-values"></div> 
+                        <span class="dropdown-text">Our Values</span>
+                        <span class="dropdown-arrow">&gt;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about_technology' %}">
+                        <div class="dropdown-icon our-technology"></div> 
+                        <span class="dropdown-text">Our Technology</span>
+                        <span class="dropdown-arrow">&gt;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about_academy' %}">
+                        <div class="dropdown-icon training-academy"></div> 
+                        <span class="dropdown-text">Training Academy</span>
+                        <span class="dropdown-arrow">&gt;</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 BYS Distribution & Logistics. All rights reserved.</p>
+        <p>📞 +256 706 870902 | 📍 Kampala, Uganda | ✉️ infobyslogistics@gmail.com</p>
+    </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- JS SCRIPTS -->
+<script>
+    // Hamburger toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+
+    // Dropdown for mobile
+    document.querySelectorAll('.nav-links .dropdown > .dropbtn').forEach(dropbtn => {
+        dropbtn.addEventListener('click', function(event) {
+            if (window.innerWidth <= 991) {
+                event.preventDefault();
+                const parentLi = this.closest('li.dropdown');
+                parentLi.classList.toggle('active');
+                const arrow = this.querySelector('.dropdown-arrow');
+                if (arrow) {
+                    arrow.classList.toggle('fa-chevron-down');
+                    arrow.classList.toggle('fa-chevron-up');
+                }
+            }
+        });
+    });
+
+    // Scroll to top
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.onscroll = function () {
+        scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+    scrollBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+
+</body>
+</html>

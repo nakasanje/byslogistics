@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="services-hero">
+  <div class="container">
+    <h1>What We Offer</h1>
+    <p>Reliable and affordable logistics solutions tailored for Uganda.</p>
+  </div>
+</section>
+
+<section class="services-list container">
+  <div class="service-item">
+    <i class="fas fa-bolt service-icon"></i>
+    <h3>Same‑Day Delivery</h3>
+    <p>Get your parcels delivered within hours across Kampala, Mukono, Entebbe, and Wakiso.</p>
+  </div>
+  <div class="service-item">
+    <i class="fas fa-map-marked-alt service-icon"></i>
+    <h3>Upcountry Deliveries</h3>
+    <p>We deliver to Gulu, Mbale, Mbarara, Jinja, Arua, and other major towns in Uganda.</p>
+  </div>
+  <div class="service-item">
+    <i class="fas fa-store service-icon"></i>
+    <h3>Retail & Business Support</h3>
+    <p>Daily logistics for shops, pharmacies, wholesalers, and e‑commerce stores.</p>
+  </div>
+  <div class="service-item">
+    <i class="fas fa-truck-loading service-icon"></i>
+    <h3>Pickup & Drop</h3>
+    <p>We collect parcels from homes, offices, and warehouses across Uganda.</p>
+  </div>
+  <div class="service-item">
+    <i class="fas fa-box-open service-icon"></i>
+    <h3>Warehouse & Fulfillment</h3>
+    <p>Secure storage and packaging solutions within Kampala.</p>
+  </div>
+  <div class="service-item">
+    <i class="fas fa-cogs service-icon"></i>
+    <h3>Custom Logistics</h3>
+    <p>Tailored services for NGOs, corporates, events, and campaigns.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to move your goods?</h2>
+    <a href="{% url 'track_request' %}" class="btn-primary">Request Pickup</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="about-single-page">
+  <div class="horizontal-scroll-page">
+
+    <!-- Title -->
+    <h1 class="main-title">TRAINING ACADEMY</h1>
+
+    <!-- Intro -->
+    <p class="academy-description">
+      The BYS Training Academy is where passion meets performance. We equip our drivers and logistics staff with the skills, mindset, and professionalism required to thrive in Uganda’s fast-evolving logistics industry.
+    </p>
+
+    <!-- Academy Content -->
+    <div class="academy-section">
+      <div class="academy-image">
+        <img src="{% static 'images/training.jpg' %}" alt="Training Session" />
+      </div>
+      <div class="academy-text">
+        <h2>What We Train</h2>
+        <ul class="academy-list">
+          <li>🎓 Customer service excellence for every delivery.</li>
+          <li>🛣️ Safe driving practices and vehicle care.</li>
+          <li>📱 Technology literacy with our BYS systems.</li>
+          <li>📦 Efficient loading/unloading and route prep.</li>
+          <li>🧭 Ethics, accountability, and brand representation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <blockquote class="value-quote">
+      “Training isn’t an event — it’s our culture of continuous improvement.”
+    </blockquote>
+
+    <!-- Next Link -->
+    <a href="{% url 'about_values' %}" class="next-page-link">Our Values &rarr;</a>
+
+  </div>
+</section>
+
+{% endblock %}

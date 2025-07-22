@@ -1,0 +1,322 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BYS Logistics Uganda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-main-content container">
+      <div class="nav-left">
+        <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
+          <span class="hamburger-icon"></span>
+          <span class="hamburger-icon"></span>
+          <span class="hamburger-icon"></span>
+        </button>
+      </div>
+      <div class="nav-center">
+        <a href="/" class="logo-text">
+          <span class="logo-bjs">BYS</span> <span class="logo-main">Distribution&Logistics</span>
+        </a>
+      </div>
+      <div class="nav-right">
+        <a href="https://wa.me/256704705184" target="_blank" aria-label="WhatsApp chat">
+          <button class="chat-button">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'home' %}">Home</a></li>
+     <li class="dropdown">
+            <a href="#" class="dropbtn">Services ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'services_delivery' %}">Same-Day Delivery</a></li>
+                <li><a href="{% url 'storage_service' %}">Storage</a></li>
+                <li><a href="{%url 'business_support'%}">Retail & Business Support</a></li>
+                
+            </ul>
+        </li>
+      <li class="dropdown">
+            <a href="#" class="dropbtn">About Us <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+            <ul class="dropdown-menu extended-about">
+    <li>
+        <a href="{% url 'about_values' %}">
+            <div class="dropdown-icon our-values"></div> 
+            <span class="dropdown-text">Our Values</span>
+            <span class="dropdown-arrow">&gt;</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'about_technology' %}">
+            <div class="dropdown-icon our-technology"></div> 
+            <span class="dropdown-text">Our Technology</span>
+            <span class="dropdown-arrow">&gt;</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'about_academy' %}">
+            <div class="dropdown-icon training-academy"></div> 
+            <span class="dropdown-text">Training Academy</span>
+            <span class="dropdown-arrow">&gt;</span>
+        </a>
+    </li>
+</ul>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h4 class="hero-highlight">YOUR CARGO </h4>
+      <h1 class="hero-title">OUR COMMITMENT TO PERFECTION</h1>
+      <p class="hero-description">
+        At BYS Distribution & Logistics, we’re redefining the delivery experience in Uganda. With a commitment to excellence, we combine modern logistics solutions and dedicated service to ensure your packages arrive precisely where and when they’re needed. Trust us to deliver—every time, without compromise.
+      </p>
+      <a href="{% url 'track_request' %}" class="btn-primary">Request a Track</a>
+    </div>
+  </header>
+
+  <section class="mvv-section">
+  <div class="container mvv-container">
+    <div class="mvv-card">
+      <h3>Mission</h3>
+      <div class="underline"></div>
+      <p>To provide reliable, people-centered logistics solutions that move Uganda forward — one delivery at a time.</p>
+    </div>
+    <div class="mvv-card">
+      <h3>Vision</h3>
+      <div class="underline"></div>
+      <p>To become Uganda’s most trusted logistics partner through innovation, efficiency, and service excellence.</p>
+    </div>
+    <div class="mvv-card">
+      <h3>Values (PIIP-TC)</h3>
+      <div class="underline"></div>
+      <ul class="mvv-values-list">
+        <li>Accountability</li>
+        <li>Integrity</li>
+        <li>Empathy</li>
+        <li>Teamwork</li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="container">
+      <h3>OUR PARTNERS</h3>
+      <div class="partners-carousel-container">
+        <div class="partners-track" id="partnersTrack">
+          <div class="partner-slide"><img src="{% static 'images/rosefoam1.jpeg' %}" alt="RoseFoam" class="partner-logo"></div>
+          <div class="partner-slide"><img src="{% static 'images/comfoam.jpeg' %}" alt="Comfoam" class="partner-logo"></div>
+          <div class="partner-slide"><img src="{% static 'images/taby.jpg' %}" alt="Taby Courtures" class="partner-logo"></div>
+          <div class="partner-slide"><img src="{% static 'images/lyn.jpg' %}" alt="Partner 4" class="partner-logo"></div>
+        </div>
+      </div>
+      <div class="partner-carousel-dots" id="partnerCarouselDots"></div>
+    </div>
+  </section>
+
+  
+  <!-- Key Services Cards Section -->
+<section class="key-services">
+  <div class="container">
+    <h2 class="section-heading">Key Services</h2>
+    <div class="service-cards-grid">
+
+      <!-- Delivery -->
+      <a href="{% url 'services_delivery' %}" class="key-service-card">
+        <div class="corner-icon" style="background-image: url('{% static 'images/about/background.jpeg' %}');"></div>
+        <h4>Same-Day & Upcountry Delivery</h4>
+        <div class="underline"></div>
+        <p>Fast, secure delivery within Kampala and major towns across Uganda.</p>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <!-- Storage -->
+      <a href="{% url 'storage_service' %}" class="key-service-card">
+        <div class="corner-icon" style="background-image: url('{% static 'images/store.jpeg' %}');"></div>
+        <h4>Storage & Fulfillment</h4>
+        <div class="underline"></div>
+        <p>Safe warehousing and packaging for small and growing businesses in Kampala.</p>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <!-- Business Support -->
+      <a href="{% url 'business_support' %}" class="key-service-card">
+        <div class="corner-icon" style="background-image: url('{% static 'images/suport.jpeg' %}');"></div>
+        <h4>Retail & Business Support</h4>
+        <div class="underline"></div>
+        <p>Advisory, tax services, and logistics tailored to support your business growth.</p>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="why-us-section">
+  <div class="container">
+    <h2 class="section-heading">Why Choose BYS?</h2>
+    <div class="why-us-grid">
+      <div class="why-item">
+        <i class="fas fa-truck-fast"></i>
+        <h4>Timely Deliveries</h4>
+        <p>We deliver on time, every time, across Uganda.</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-boxes-stacked"></i>
+        <h4>Safe Storage</h4>
+        <p>Secure warehouses ensure your goods are safe and well-managed.</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-hands-helping"></i>
+        <h4>Business Support</h4>
+        <p>We help businesses register, comply, and grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to move your goods?</h2>
+    <a href="{% url 'track_request' %}" class="btn-primary">Request a Track</a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 BYS Distribution&Logistics. All rights reserved.</p>
+      <p>📞 +256 706 870902 | 📍 Kampala, Uganda | ✉️ infobyslogistics@gmail.com</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+const counters = document.querySelectorAll('.count');
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-count');
+    const current = +counter.innerText;
+    const increment = target / 100;
+
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(updateCount, 30);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  updateCount();
+});
+
+
+    // Hamburger toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+      this.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+
+    // Scroll to top
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.onscroll = () => {
+      scrollBtn.style.display = (window.scrollY > 200) ? "block" : "none";
+    };
+    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Partners Carousel
+    const partnersTrack = document.getElementById('partnersTrack');
+    const partnerSlides = document.querySelectorAll('.partner-slide');
+    const partnerCarouselDotsContainer = document.getElementById('partnerCarouselDots');
+    let currentPartnerIndex = 0;
+    let logosPerView = 3;
+    let autoSlideInterval;
+
+    function updateLogosPerView() {
+      logosPerView = window.innerWidth <= 480 ? 1 : (window.innerWidth <= 768 ? 2 : 3);
+      createDots();
+      updateCarouselPosition();
+    }
+
+    function createDots() {
+      partnerCarouselDotsContainer.innerHTML = '';
+      const totalPages = Math.ceil(partnerSlides.length / logosPerView);
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === currentPartnerIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentPartnerIndex = i;
+          updateCarouselPosition();
+          resetAutoSlide();
+        });
+        partnerCarouselDotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateCarouselPosition() {
+      const slideWidth = partnerSlides[0].offsetWidth;
+      const maxScroll = slideWidth * partnerSlides.length - partnersTrack.parentElement.clientWidth;
+      let target = currentPartnerIndex * (slideWidth * logosPerView);
+      if (target > maxScroll) target = maxScroll;
+      partnersTrack.style.transform = `translateX(-${target}px)`;
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentPartnerIndex);
+      });
+    }
+
+    function nextSlide() {
+      const totalPages = Math.ceil(partnerSlides.length / logosPerView);
+      currentPartnerIndex = (currentPartnerIndex + 1) % totalPages;
+      updateCarouselPosition();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 3000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    window.addEventListener('load', () => {
+      updateLogosPerView();
+      startAutoSlide();
+    });
+
+    window.addEventListener('resize', () => {
+      updateLogosPerView();
+      const totalPages = Math.ceil(partnerSlides.length / logosPerView);
+      if (currentPartnerIndex >= totalPages) currentPartnerIndex = totalPages - 1;
+      if (currentPartnerIndex < 0) currentPartnerIndex = 0;
+      updateCarouselPosition();
+    });
+
+    partnersTrack.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    partnersTrack.parentElement.addEventListener('mouseleave', resetAutoSlide);
+  </script>
+</body>
+</html>

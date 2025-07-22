@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="about-single-page">
+  <div class="horizontal-scroll-page">
+
+    <!-- Title -->
+    <h1 class="main-title">OUR TECHNOLOGY</h1>
+
+    <!-- Intro -->
+    <p class="technology-description">
+      At BYS Logistics Uganda, we believe technology is the backbone of efficient service. Our systems are designed to provide real-time updates, seamless tracking, and intelligent logistics planning — ensuring reliability at every turn.
+    </p>
+
+    <!-- Tech Features -->
+    <div class="tech-section">
+      <div class="tech-text">
+        <h2>How We Use Technology</h2>
+        <ul class="tech-list">
+          <li>📦 Real-time parcel tracking for full transparency.</li>
+          <li>📍 Smart route optimization using GPS intelligence.</li>
+          <li>📊 Automated dispatch and driver assignment.</li>
+          <li>📱 Mobile-friendly customer interaction tools.</li>
+          <li>🧠 Data-driven decisions through our analytics dashboards.</li>
+        </ul>
+      </div>
+      <div class="tech-image">
+        <img src="{% static 'images/tech.jpg' %}" alt="Technology at Work" />
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <blockquote class="value-quote">
+      “We don’t just move packages — we move data, decisions, and peace of mind.”
+    </blockquote>
+
+    <!-- Next Link -->
+    <a href="{% url 'about_academy' %}" class="next-page-link">See Our Training Academy &rarr;</a>
+
+  </div>
+</section>
+
+{% endblock %}

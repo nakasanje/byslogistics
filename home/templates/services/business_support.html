@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="service-hero">
+  <div class="container">
+    <h1 class="service-title">Retail & Business Support</h1>
+    <p class="service-subtitle">Streamlining Deliveries & Financial Operations for Uganda’s Small Businesses</p>
+  </div>
+</section>
+
+<section class="service-content container">
+  <!-- Logistics Support -->
+  <div class="service-intro">
+    <img src="{% static 'images/suport.jpeg' %}" alt="Business Support Logistics" class="service-image">
+    <div class="service-text">
+      <h2>Reliable Daily Delivery for Growing Businesses</h2>
+      <p>BYS Logistics Uganda provides tailored delivery services for retail shops, pharmacies, and online stores. Whether you’re sending single packages or handling bulk dispatches, we ensure fast, affordable, and organized delivery across Uganda.</p>
+      <p>We pick up directly from your location and deliver to your clients — so you can focus on growing your business, while we handle the logistics.</p>
+    </div>
+  </div>
+
+  <div class="service-benefits">
+    <h3>Key Delivery Features</h3>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> Daily pickups and on-time deliveries</li>
+      <li><i class="fas fa-check-circle"></i> Cash on Delivery (COD) options</li>
+      <li><i class="fas fa-check-circle"></i> Real-time parcel tracking</li>
+      <li><i class="fas fa-check-circle"></i> Service for pharmacies, retailers, and online vendors</li>
+    </ul>
+  </div>
+
+  <!-- Financial Services Table -->
+  <!-- Financial Services Table -->
+<div class="financial-services">
+  <h4>Our Financial Services</h4>
+  <div class="table-container">
+    <table class="services-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Price (UGX)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Preparation of Financial Statements</td>
+          <td>Depends on evaluation</td>
+        </tr>
+        <tr>
+          <td>Management Advisory Services</td>
+          <td>Depends on evaluation</td>
+        </tr>
+        <tr>
+          <td>Internal Audit</td>
+          <td>Depends on evaluation</td>
+        </tr>
+        <tr>
+          <td>URA Returns - PAYE, WHT, VAT (Monthly)</td>
+          <td>150,000</td>
+        </tr>
+        <tr>
+          <td>Income Tax Filing</td>
+          <td>150,000 for small businesses; varies for others</td>
+        </tr>
+        <tr>
+          <td>Business Registration</td>
+          <td>Depends on evaluation</td>
+        </tr>
+        <tr>
+          <td>Trade License Processing & Renewal</td>
+          <td>100,000 + license fees (depends on business)</td>
+        </tr>
+        <tr>
+          <td>Organization of Accounts</td>
+          <td>From 200,000 (based on business size)</td>
+        </tr>
+        <tr>
+          <td>NSSF & URSB Filing (Monthly)</td>
+          <td>100,000</td>
+        </tr>
+        <tr>
+          <td>Financial Planning & Budgeting</td>
+          <td>Depends on evaluation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+  <div class="cta">
+    <a href="{% url 'contact' %}" class="btn-primary">Get Business Support</a>
+  </div>
+</section>
+{% endblock %}
