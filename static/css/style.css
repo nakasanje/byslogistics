@@ -20,7 +20,7 @@ html, body {
   margin: auto;
 }
 
-/* ========== NAVBAR ========== */
+/* === NAVBAR === */
 .navbar {
   background-color: #003366;
   color: white;
@@ -31,20 +31,58 @@ html, body {
   padding: 15px 0;
 }
 
+/* === MAIN CONTAINER === */
 .nav-main-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* === LEFT: HAMBURGER === */
+.nav-left,
+.nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;      /* ✅ align ☰ */
+  justify-content: center;
+  height: 40px;             /* ✅ match height of chat button */
+  line-height: 1;           /* ✅ prevent vertical offset */
+  padding: 0;               /* ✅ reset default button padding */
+}
+
+
+/* === CENTER: LOGO === */
+.nav-center {
+  flex: 2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-text {
-  font-size: 24px;
+  white-space: nowrap;          /* 🔒 Prevent wrapping */
+  overflow: hidden;             /* Optional: clean overflow */
+  text-overflow: ellipsis;      /* Optional: add ellipsis if cut */
+  color: white;
   font-weight: bold;
   text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: left;
+  font-size: clamp(16px, 2.5vw, 24px);
+  display: inline-flex;
+  align-items: center;
 }
 
 .logo-bjs {
@@ -52,30 +90,31 @@ html, body {
   margin-right: 5px;
 }
 
-.nav-left {
-  position: absolute;
-  left: 15px;
-}
-
+/* === RIGHT: CHAT BUTTON === */
 .nav-right {
-  position: absolute;
-  right: 15px;
+  justify-content: flex-end;
 }
 
 .chat-button {
   background-color: #25D366;
-  color: white;
   border: none;
-  padding: 10px 12px;
+  padding: 10px;
   border-radius: 50%;
-  font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chat-button:hover {
   background-color: #1ebe5d;
 }
+
+.chat-button img {
+  width: 20px;
+  height: 20px;
+}
+
 
 .nav-links {
   display: flex;
